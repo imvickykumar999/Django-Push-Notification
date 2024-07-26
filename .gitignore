@@ -1,6 +1,6 @@
 
 *.pyc
 .venv/
-serviceAccountKey.json
+*serviceAccountKey.json
 .virtualenvs/
 .cache/python-entrypoints/ec880374d198d28e418cc3f0d997629828bc505a1f5097cde775b1439a3c0c22
