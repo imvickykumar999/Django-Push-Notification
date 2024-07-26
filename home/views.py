@@ -84,16 +84,18 @@ def send(request):
         return HttpResponse("Invalid request method", status=405)
 
 def showFirebaseJS(request):
+    firebase_config = get_object_or_404(FirebaseConfig, id=1)
+
     data = ('importScripts("https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js");'
             'importScripts("https://www.gstatic.com/firebasejs/8.2.0/firebase-messaging.js"); '
             'var firebaseConfig = {'
-            '        apiKey: "AIzaSyDEffV60DqptX5isXVzlhYp1JMKf7t2wlA",'
-            '        authDomain: "fir-push-notification-85613.firebaseapp.com",'
-            '        projectId: "fir-push-notification-85613",'
-            '        storageBucket: "fir-push-notification-85613.appspot.com",'
-            '        messagingSenderId: "279392742552",'
-            '        appId: "1:279392742552:web:df183eb0e8c256fb7174ed",'
-            '        measurementId: "G-TZVKHMQSRE"'
+            f'        apiKey: "{firebase_config.api_key}",'
+            f'        authDomain: "{firebase_config.auth_domain}",'
+            f'        projectId: "{firebase_config.project_id}",'
+            f'        storageBucket: "{firebase_config.storage_bucket}",'
+            f'        messagingSenderId: "{firebase_config.messaging_sender_id}",'
+            f'        appId: "{firebase_config.app_id}",'
+            f'        measurementId: "{firebase_config.measurement_id}"'
             '};'
             'firebase.initializeApp(firebaseConfig);'
             'const messaging=firebase.messaging();'
