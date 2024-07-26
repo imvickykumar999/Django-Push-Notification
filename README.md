@@ -1,11 +1,9 @@
 # `Generate FCM Token`
 
-![image](https://github.com/user-attachments/assets/d35a4462-5813-45a1-ad77-6926e733da75)
-![image](https://github.com/user-attachments/assets/10a54d8e-7540-473b-b124-0a318e3da9fa)
-
-To obtain the service account JSON file required for `service_account.Credentials.from_service_account_file`, you need to create a service account in your Firebase project and download the key. Here are the steps to do so:
-
-![image](https://github.com/user-attachments/assets/94caac48-3947-42ef-9696-80d5a0974201)
+![image](https://github.com/user-attachments/assets/0f09cc86-ed0e-4e05-a8f5-b13dbcff937c)
+![image](https://github.com/user-attachments/assets/ae135c02-3ce7-43e4-9252-c8e612768320)
+![image](https://github.com/user-attachments/assets/de6aa908-4cb5-4f7d-a074-017b43bfd73a)
+![image](https://github.com/user-attachments/assets/2fa7e1cf-63e5-4375-bc66-f7c882fb0aae)
 
 ### Steps to Create a Service Account and Download the JSON Key
 
