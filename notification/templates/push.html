@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Send Push Notification{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 align="center">Send Push Notification</h1>
+    <form method="post" action="{% url 'send_notification' %}">
+        {% csrf_token %}
+        <label for="fcm_token">FCM Token:</label>
+        <input type="text" id="fcm_token" value="{{ fcm_token }}" name="fcm_token" required><br><br>
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required><br><br>
+        <label for="body">Body:</label>
+        <input type="text" id="body" name="body" required><br><br>
+        <label for="image">Image URL (optional):</label>
+        <input type="text" id="image" name="image"><br><br>
+        <button type="submit">Send Notification</button>
+    </form>
+</div>
+{% endblock %}

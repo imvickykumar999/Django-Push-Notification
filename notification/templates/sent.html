@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Notification Result{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 align="center">Notification Sent</h1>
+    <br>
+    <div class="card" style="padding: 20px; border: 1px solid #ccc; border-radius: 10px; text-align: center;">
+        <p><strong>Title:</strong> <span class="highlight">{{ message_title }}</span></p>
+        <p><strong>Body:</strong> <span class="highlight">{{ message_desc }}</span></p>
+        {% if image %}
+            <br>
+            <p><img src="{{ image }}" alt="Notification Image" style="max-width: 50%; cursor: pointer;" onclick="showImagePopup('{{ image }}')"></p>
+        {% endif %}
+    </div>
+</div>
+
+<div id="imagePopup" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.7);">
+    <span onclick="closeImagePopup()" style="position: absolute; top: 20px; right: 35px; color: white; font-size: 40px; font-weight: bold; cursor: pointer;">&times;</span>
+    <img id="popupImage" src="" style="margin: auto; display: block; width: 80%; max-width: 700px;">
+</div>
+
+<script>
+    function copyToClipboard() {
+        var token = document.getElementById("registrationToken").innerText;
+        navigator.clipboard.writeText(token).then(function() {
+            alert("Registration Token copied to clipboard!");
+        }, function(err) {
+            alert("Failed to copy Registration Token: ", err);
+        });
+    }
+
+    function showImagePopup(imageUrl) {
+        var popup = document.getElementById("imagePopup");
+        var popupImage = document.getElementById("popupImage");
+        popupImage.src = imageUrl;
+        popup.style.display = "block";
+    }
+
+    function closeImagePopup() {
+        var popup = document.getElementById("imagePopup");
+        popup.style.display = "none";
+    }
+</script>
+{% endblock %}
+
