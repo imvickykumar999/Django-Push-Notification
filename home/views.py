@@ -69,7 +69,7 @@ def send(request):
         
         img = qr.make_image(fill='black', back_color='white')
         buffered = BytesIO()
-        img.save(buffered, format="PNG")
+        img.save(buffered)
         img_str = base64.b64encode(buffered.getvalue()).decode()
 
         response_string = json.dumps(result)
